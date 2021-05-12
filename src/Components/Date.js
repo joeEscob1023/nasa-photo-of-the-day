@@ -5,7 +5,7 @@ const Date = (props) => {
   console.log(date);
   return (
     <div>
-      <h3>Date: {date}</h3>
+      <p>Date: {date}</p>
     </div>
   );
 };
