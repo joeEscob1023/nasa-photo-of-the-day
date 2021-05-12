@@ -15,13 +15,17 @@ function App() {
       .then((res) => {
         console.log(res.data);
         setState(res.data);
-        console.log(state);
       })
       .catch((err) => console.log(err));
     return () => {};
   }, []);
 
-  return <div className="App">{state && <Image state={state} />}</div>;
+  return (
+    <div className="App">
+      <Header />
+      {state && <Image state={state} />}
+    </div>
+  );
 }
 
 export default App;

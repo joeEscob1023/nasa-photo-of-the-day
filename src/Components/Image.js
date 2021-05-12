@@ -1,10 +1,13 @@
 import React from "react";
+import Date from "./Date";
 
 const Image = (props) => {
-  console.log(props.state.hdurl);
+  const { hdurl } = props.state;
+  console.log(hdurl);
   return (
-    <div className="imageDiv">
-      <img className="images" src={props.state.hdurl} alt="nasa" />
+    <div className="container">
+      <Date dateInfo={props} />
+      <img className="images" src={hdurl} alt="nasa" />
     </div>
   );
 };

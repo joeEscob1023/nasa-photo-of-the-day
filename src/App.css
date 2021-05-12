@@ -29,6 +29,13 @@
 }
 .images {
   width: 25%;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @keyframes App-logo-spin {
