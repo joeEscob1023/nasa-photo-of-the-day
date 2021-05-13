@@ -17,7 +17,9 @@ function App() {
         setState(res.data);
       })
       .catch((err) => console.log(err));
-    return () => {};
+    return () => {
+      console.log("done");
+    };
   }, []);
 
   return (
