@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import axios from "axios";
+import { API_KEY } from "./constants/index";
+//Components
+import Header from "./Components/Header";
+import Image from "./Components/Image";
 
 function App() {
+  const [state, setState] = useState({});
+  console.log(state);
+  useEffect(() => {
+    axios
+      .get(API_KEY)
+      .then((res) => {
+        console.log(res.data);
+        setState(res.data);
+      })
+      .catch((err) => console.log(err));
+    return () => {
+      console.log("done");
+    };
+  }, []);
+
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <Header />
+      {state && <Image state={state} />}
     </div>
   );
 }
